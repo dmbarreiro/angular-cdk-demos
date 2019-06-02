@@ -1,0 +1,64 @@
+.snackbar-container {
+
+    $close-button-size: 1.5rem;
+    $close-button-offset: calc((#{$close-button-size} / 2) * -1);
+
+    display: flex;
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+
+    .close-button {
+        position: absolute;
+        top: $close-button-offset; // negative goes up
+        right: $close-button-offset; // negative goes right
+        cursor: pointer;
+        background: black;
+        border-radius: 50%;
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: $close-button-size;
+        height: $close-button-size;
+        box-shadow: 0 0 1.3rem rgba(0, 0, 0, 0.35);
+
+        mat-icon {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+    }
+
+    &.info {
+        background: lightblue;
+        .message {
+            color: white;
+        }
+    }
+
+    &.warn {
+        background: orange;
+        .message {
+            color: white;
+        }
+
+        .close-button {
+            background: black;
+        }
+    }
+
+    &.error {
+        background: red;
+        .message {
+            color: black;
+        }
+
+        .close-button {
+            background: black;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<div 
+class="snackbar-container"
+[ngClass]="options?.severity"
+[@feedbackAnimation]="animationState"
+(@feedbackAnimation.done)="animationDone()">
+  <span class="message">{{message}}</span>
+  <button class="close-button" (click)="animateClose()" *ngIf="options?.closable">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
